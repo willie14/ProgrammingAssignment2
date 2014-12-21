@@ -1,0 +1,53 @@
+#WILLIES 
+#WE ASSUME THAT var Y is already in our environment 
+#first ,matrix is cached to zero ,
+#through solve () is defined how the inverse of the matrix defined (matrix should be a square one.)
+
+makeCacheMatrix <- function(x = matrix(data = as.vector(y),nrow= nummeric(a),ncol=nummeric(b)  ) ) {
+  if(dim(x)<=a*b){
+       matrixcache<- NULL
+        set <- function(y) {
+                x <<- y
+                matrixcache<<- NULL
+        }
+        get <- function() x
+        setinv <- function(solve) inv <<- solve(x)
+        getinv <- function() inv
+        list(set = set, get = get,
+             setinv = setinv,
+             getinv = getinv)
+       # inverse saved first in this list 
+}
+  
+  
+}
+
+## solving or inversing the cache matrix that u had just made
+
+cacheSolve <- function(x) {
+        inv <- x$getinv()
+        if(!is.null det((inv)) {
+                message("getting cached data")#make sure the det ist       not 0 4 inverse 
+                return(inv)
+        }
+        data <- x$get()
+       inv <- inv(data)
+        x$setinv(inv)
+        inv
+
+        ## Return a matrix that is the inverse of 'x' matrix of our 1 st fct.
+}
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
